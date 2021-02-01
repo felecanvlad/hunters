@@ -5,16 +5,40 @@ const firstPasswordInput = document.getElementById("first-password");
 const secondPasswordInput = document.getElementById("second-password");
 const birthdayPicker = document.getElementById("birthday");
 
+function clearAllFields() {
+    emailInput.value = "";
+    firstPasswordInput.value = "";
+    secondPasswordInput.value = "";
+    birthdayPicker.value = "";
+}
 
-registerButton.addEventListener("click", e => {
+function createHunter() {
+    //hunter json object
+    const hunter = {
+        email: emailInput.value,
+        password: firstPasswordInput.value,
+        birthdate: birthdayPicker.value
+    }
+    fetch("http://localhost:3000/hunters/create", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(hunter)
+    })
+        .then(res => res.json())
+        .then(resp => {
+            if (resp.success) {
+                // if the hunter user is created
+                clearAllFields();
+            }
+        })
+}
+
+registerButton.addEventListener("click", () => {
     if ((emailInput.value && firstPasswordInput.value && secondPasswordInput.value &&
         birthdayPicker.value) != "") {
-        const registerJson = {
-            "email": emailInput.value,
-            "password": firstPasswordInput.value,
-            "birthday": birthday.value
-        };
-        console.log(registerJson);
+        createHunter();
     } else {
         alert("Input fields are incorrect");
     }
