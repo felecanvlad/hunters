@@ -2,20 +2,46 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/registration.css">
     <title> Hunters </title>
 </head>
 
-<body>
+<body class="register-page">
     <header>
-        Hunters Test 2.0 3.0
+
     </header>
+    <div class="container">
+        <h1> &#9876; Register hunter &#9876;</h1>
+        <p>Please fill in this form to create an account. &#9997;</p>
+        <hr>
+
+        <label for="email"><b>Email</b></label>
+        <input type="text" class="all-inputs" placeholder="Enter Email" name="email" id="email" required>
+
+        <label for="first-password"><b>Password</b></label>
+        <input type="password" class="all-inputs" placeholder="Enter Password" name="first-password" id="first-password"
+            required>
+
+        <label for="second-password"><b>Repeat Password</b></label>
+        <input type="password" class="all-inputs" placeholder="Repeat Password" name="second-password"
+            id="second-password" required>
+
+        <label for="birthday"><b>Birthday</b></label>
+        <input type="date" id="birthday" name="birthday">
+        <hr>
+
+        <p>By creating an account you agree to our <a href="data/terms-of-use.html">Terms & Privacy</a>.</p>
+
+        <button type="submit" class="register-button" id="register-button-id">Register</button>
+    </div>
+
+    <div class="sign-in-when-no-account">
+        <p>Already have an account? <a href="#">Sign in</a>.</p>
+    </div>
 
     <footer>
-        Felecan Vlad
-        Roman Rares
-        Mihai Iacob 
-        Andrei Tirla
+
     </footer>
     <script src="hunters.js"></script>
 </body>
