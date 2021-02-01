@@ -1,36 +1,41 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../styles/login.css">
+    <link rel="stylesheet" href="/styles/login.css">
 </head>
 
 <body>
 
     <h2> &#9757; Hunter Login</h2>
 
-        <div class="imgcontainer">
-            <img src="../resources/pusca.jpg" alt="Avatar" class="avatar">
-        </div>
+    <div class="imgcontainer">
+        <img src="/resources/pusca.jpg" alt="Avatar" class="avatar">
+    </div>
 
-        <div class="container">
-            <label for="uname"><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" name="uname" required>
+    <div class="container">
+        <label for="username"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="username" id="username-input" required>
 
-            <label for="psw"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" required>
+        <label for="password"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="password" id="password-input" required>
 
-            <button type="submit">Login</button>
-            <label>
-                <input type="checkbox" checked="checked" name="remember"> Remember me
-            </label>
-        </div>
+        <button type="submit" id="login-button">Login</button>
+        <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label>
+    </div>
 
-        <div class="container" style="background-color:#41533b">
-            <span class="psw">Forgot <a href="#">password?</a></span>
-        </div>
+    <div class="container" style="background-color:#41533b">
+        <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
     </form>
 
+    <footer>
+
+    </footer>
+    <script src="/js/login.js"></script>
 </body>
 
 </html>

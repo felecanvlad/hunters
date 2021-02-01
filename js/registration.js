@@ -44,4 +44,3 @@ registerButton.addEventListener("click", () => {
     }
 
 });
-
