@@ -31,6 +31,7 @@ function createHunter() {
             if (resp.success) {
                 // if the hunter user is created
                 clearAllFields();
+                // display login page? or display a success screen
             }
         })
 }

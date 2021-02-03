@@ -8,4 +8,5 @@ const passwordInput = document.getElementById("password-input");
 
 loginButton.addEventListener("click", () => {
     alert("asd");
+
 });

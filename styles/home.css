@@ -26,30 +26,53 @@ header,
 body > section {
   flex: 0.1;
 }
-#content {
-  flex: 4.9;
-  flex-direction: row;
-  display: flex;
-}
+
 #main {
   margin: 2px;
   padding: 4px;
   border: 2px solid green;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 #menu-bar {
   margin: 2px;
   padding: 4px;
   flex: 1;
-  /* background-color: #556b2f; */
   text-align: left;
   color: #fff;
 }
+
+#menu-bar ul {
+  list-style-type: none;
+}
 #main {
   flex: 4;
+  display: inline-flex;
+  flex-direction: row;
 }
 /* footer {
   min-height: 20px;
 } */
 #logo {
   margin: 0;
+}
+
+.card {
+  background-color: #ffffff;
+  width: 300px;
+  height: 300px;
+  /* margin: 16px 0; */
+  padding: 24px;
+  margin-left: 50px;
+  box-shadow: 0 0 0 1px rgba(0,0,0,.15), 0 2px 3px rgba(0,0,0,.2);
+  border-radius: 2px;
+  background-color: red;
+  display: flex;
+  flex-direction: row;
+}
+
+#content {
+  flex: 4.9;
+  flex-direction: row;
+  display: flex;
 }
