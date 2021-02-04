@@ -45,7 +45,7 @@ body > section {
 #menu-bar ul {
   list-style-type: none;
 }
-#main {
+#home {
   flex: 4;
   display: inline-flex;
   flex-direction: row;
@@ -75,4 +75,26 @@ body > section {
   flex: 4.9;
   flex-direction: row;
   display: flex;
+}
+
+#left-menu-bar a:visited {
+  color: #fff;
+}
+
+#left-menu-bar a {
+  text-decoration: none;
+  padding: 30px 30px 30px 30px;
+  margin: 2px 0;
+  color: #fff;
+  display: inline-block;
+  border-radius: 25px;
+}
+
+#left-menu-bar a:hover {
+  color: #334455;
+  background-color: red;
+}
+
+.active {
+  background-color: green;
 }

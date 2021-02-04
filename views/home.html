@@ -23,52 +23,60 @@
     </header>
     <section id="content">
         <div id="menu-bar">
-            <ul>
+            <ul id="left-menu-bar">
                 <li>
-                    <a href="#"><button type="button" class="btn btn-dark">Home</button></a>
+                    <a href="#" data-page="home">
+                        Home
+                    </a>
                 </li>
                 <li>
-                    <a href="#"><button type="button" class="btn btn-dark">Profile</button></a>
+                    <a href="#" data-page="profile">
+                        Profile
+                    </a>
                 </li>
                 <li>
-                    <a href="#"><button type="button" class="btn btn-dark">Generate Test</button></a>
+                    <a href="#" data-page="test">
+                        Generate Test
+                    </a>
                 </li>
                 <li>
-                    <a href="#"><button type="button" class="btn btn-dark">History</button></a>
+                    <a href="#" data-page="history">
+                        History
+                    </a>
                 </li>
             </ul>
         </div>
-        <div id="main">
-            <div id="skills" class="card">
-                <h2> Title</h2>
+        <div id="home" style="display: none;">
+            <div class="card">
+                <h2> 1111</h2>
 
             </div>
+            <p>
+                Pentru a descarca toate intrebarile oficiale apasa
+                <a href="http://mmediu.ro/app/webroot/uploads/files/%C3%AEntreb%C4%83ri-examen-v%C3%A2n%C4%83tor-valabile-din-25-02-2016.doc"
+                    target="_blank" rel="nofollow">
+                    <b>aici</b>
+                </a>
+            </p>
+        </div>
+        <div id="profile" style="display: none;">
+            <div id="skills" class="card">
+                <h2> profile</h2>
 
-            <div id="skills" class="card">
-                <h2> 2222</h2>
-                <ul>
-                </ul>
             </div>
-            <div id="skills" class="card">
-                <h2> 3333</h2>
-                <ul>
-                </ul>
-            </div>
-            <div id="skills" class="card">
-                <h2> 4444</h2>
-                <ul>
-                </ul>
-            </div>
-            <div id="skills" class="card">
-                <h2> 5555</h2>
-                <ul>
-                </ul>
-            </div>
+        </div>
 
+        <div id="test" style="display: none;">
             <div id="skills" class="card">
-                <h2> 6666</h2>
-                <ul>
-                </ul>
+                <h2> test</h2>
+
+            </div>
+        </div>
+
+        <div id="history" style="display: none;">
+            <div id="skills" class="card">
+                <h2> history</h2>
+
             </div>
         </div>
     </section>
