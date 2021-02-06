@@ -5,14 +5,14 @@ header,
 footer {
   margin: 2px;
   padding: 4px;
-  border: 2px solid blue;
+  /* border: 2px solid blue; */
   flex-direction: row;
   display: flex;
 }
 #content {
-  margin: 2px;
-  padding: 4px;
-  border: 2px solid red;
+  /* margin: 2px;
+  padding: 4px; */
+  /* border: 2px solid red; */
 }
 body {
   margin: 0;
@@ -35,8 +35,8 @@ body > section {
   justify-content: center;
 }
 #menu-bar {
-  margin: 2px;
-  padding: 4px;
+  /* margin: 2px;
+  padding: 4px; */
   flex: 1;
   text-align: left;
   color: #fff;
@@ -70,7 +70,7 @@ body > section {
   margin-left: 50px;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15), 0 2px 3px rgba(0, 0, 0, 0.2);
   border-radius: 2px;
-  background-color: red;
+  background-color: rgb(180, 139, 139);
   display: flex;
   flex-direction: row;
 }
@@ -81,24 +81,44 @@ body > section {
   display: flex;
 }
 
+#menu-bar {
+  background: #001b41;
+  background-repeat: no-repeat;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15), 0 2px 3px rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+}
+
+#left-menu-bar {
+  background-color: #001b41;
+  justify-content: center;
+  padding: 0px;
+}
+
 #left-menu-bar a:visited {
   color: #fff;
 }
 
 #left-menu-bar a {
   text-decoration: none;
-  padding: 30px 30px 30px 30px;
-  margin: 2px 0;
+  line-height: 60px;
+  min-height: 60px;
+  border-bottom: 1px solid;
+  border-color: rgba(243, 244, 245, 0.1);
+  z-index: 2;
+  padding: 20px 80px;
+  /* margin: 2px 0px; */
   color: #fff;
-  display: inline-block;
-  border-radius: 25px;
+  display: block;
+  text-align: center;
 }
 
 #left-menu-bar a:hover {
-  color: #334455;
-  background-color: red;
+  color: #fff;
+  background-color: #679fec;
+  transition: background 0.3s ease;
 }
 
 .active {
-  background-color: green;
+  background-color: #175c9c;
+  color: #fff;
 }
