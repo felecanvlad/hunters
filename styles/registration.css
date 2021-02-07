@@ -55,3 +55,14 @@ h1, p {
     background-color: #f1f1f1;
     text-align: center;
 }
+
+#error-message {
+    color: red;
+    animation-name: custom-animation;
+    animation-duration: 4s;
+}
+
+@keyframes custom-animation {
+    from {color: red;}
+    to {background-color: yellow;}
+  }
