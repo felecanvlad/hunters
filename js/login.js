@@ -2,14 +2,19 @@
 
 // inputs, buttons from login page
 const loginButton = document.getElementById("login-button");
-const usernameInput = document.getElementById("username-input");
+const emailInput = document.getElementById("email-input");
 const passwordInput = document.getElementById("password-input");
+const errorMessage = document.getElementById("error-message");
 
+function clearInputFields() {
+    emailInput.value = "";
+    passwordInput.value = "";
+}
 
 function checkCredentials() {
     let statusCodeResponse = "";
     const hunter = {
-        email: usernameInput.value,
+        email: emailInput.value,
         password: passwordInput.value,
     }
     fetch("http://localhost:3000/hunters/authenticate", {
@@ -28,14 +33,20 @@ function checkCredentials() {
             if (statusCodeResponse === 200) {
                 window.location.replace("http://localhost:3001/home.html");
             } else {
-                alert("fail");
+                errorMessage.innerText = "Incorrect email address or password";
             }
-        })
+        }).catch(function (error) {
+            clearInputFields();
+            errorMessage.innerText = "Wrong URL or node.js app is not running: " + error;
+        });
 }
 
-
 loginButton.addEventListener("click", () => {
-    checkCredentials();
+    if ((emailInput.value && passwordInput.value) != "") {
+        checkCredentials();
+    } else {
+        errorMessage.innerText = "Please check the entered data";
+    }
 });
 
 document.addEventListener('keyup', function (event) {
