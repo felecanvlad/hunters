@@ -13,6 +13,7 @@ function clearAllFields() {
 }
 
 function createHunter() {
+    let statusCodeResponse = "";
     //hunter json object
     const hunter = {
         email: emailInput.value,
@@ -26,22 +27,31 @@ function createHunter() {
         },
         body: JSON.stringify(hunter)
     })
-        .then(res => res.json())
-        .then(resp => {
-            if (resp.success) {
-                // if the hunter user is created
-                clearAllFields();
-                // display login page? or display a success screen
-            }
+        .then(function (res) {
+            statusCodeResponse = res.status;
+            return res.json();
         })
+        .then((resp) => {
+            console.log("resp", resp);
+            if (statusCodeResponse === 200) {
+                window.location.replace("http://localhost:3001/views/login.html");
+            } else {
+                alert("fail");
+            }
+        });
 }
 
 registerButton.addEventListener("click", () => {
     if ((emailInput.value && firstPasswordInput.value && secondPasswordInput.value &&
         birthdayPicker.value) != "") {
-        createHunter();
+        if (firstPasswordInput.value !== secondPasswordInput.value) {
+            alert("Passwords should be the same!");
+            firstPasswordInput.value = "";
+            secondPasswordInput.value = "";
+        } else {
+            createHunter();
+        }
     } else {
         alert("Input fields are incorrect");
     }
-
 });
