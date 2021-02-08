@@ -41,6 +41,10 @@ body > section {
 #menu-bar ul {
   list-style-type: none;
 }
+
+.card-test ul {
+  list-style-type: none;
+}
 #home,
 #profile,
 #test,

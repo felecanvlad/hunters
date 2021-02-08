@@ -30,5 +30,42 @@ function initializeLeftMenu() {
     });
 }
 
+function generateRandomTest(number) {
+    let statusCodeResponse = "";
+    fetch(`http://localhost:3000/hunters/random?value=${number}`, {
+        method: "GET"
+    })
+        .then(res => {
+            statusCodeResponse = res.status;
+            return res.json()
+        })
+        .then(resp => {
+            if (statusCodeResponse === 200) {
+                renderQuestions(resp);
+            } else {
+                alert("ERROR");
+            }
+        });
+}
+
+function renderQuestions(questions) {
+    const questionsLi = questions.map(function (question) {
+        return "<li>" +
+            "<h1>" + "<b>" + question.text + "</b>" + "</h1>" +
+            question.option_a + "<hr>" +
+            question.option_b + "<hr>" +
+            question.option_c + "<hr>" +
+            "</li>";
+    });
+
+    const ul = document.querySelector(".card-test ul");
+    ul.innerHTML = questionsLi.join("");
+}
+
 initializeLeftMenu();
 showCard(currentPage);
+
+const generateTextHref = document.getElementById("start-test");
+generateTextHref.addEventListener("click", () => {
+    generateRandomTest(4);
+});
