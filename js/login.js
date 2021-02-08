@@ -31,7 +31,7 @@ function checkCredentials() {
         .then((resp) => {
             console.log("resp", resp);
             if (statusCodeResponse === 200) {
-                window.location.replace("http://localhost:3001/home.html");
+                window.location = "/home.html";
             } else {
                 errorMessage.innerText = "Incorrect email address or password";
             }
