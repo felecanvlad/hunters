@@ -51,21 +51,21 @@ function generateRandomTest(number) {
 function renderQuestions(questions) {
     const questionsLi = questions.map(function (question) {
         return ` 
-            <h2>  <b> ${question.text} </b> </h2>
+            <h5>  <b> ${question.text} : </b> </h5>
        
     <ol type="A" class>
         <li>  <label class="container">
     <input type="checkbox">
-    <span class="checkmark">${question.option_a}</span></label> 
+    <span class="checkmark"> ${question.option_a}</span></label> 
         </li>  <hr> 
         <li> <label class="container">
     <input type="checkbox">
-    <span class="checkmark">${question.option_b}</span></label> 
+    <span class="checkmark"> ${question.option_b}</span></label> 
         </li>  <hr> 
         <li>  <label class="container"><input type="checkbox">
-    <span class="checkmark">${question.option_c}</span></label> 
+    <span class="checkmark"> ${question.option_c}</span></label> 
         </li>  <hr>
-    </ol>  `;
+    </ol>`;
     });
 
     const ul = document.querySelector(".card-test ul");
