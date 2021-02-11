@@ -50,12 +50,22 @@ function generateRandomTest(number) {
 
 function renderQuestions(questions) {
     const questionsLi = questions.map(function (question) {
-        return "<li>" +
-            "<h1>" + "<b>" + question.text + "</b>" + "</h1>" +
-            question.option_a + "<hr>" +
-            question.option_b + "<hr>" +
-            question.option_c + "<hr>" +
-            "</li>";
+        return ` 
+            <h2>  <b> ${question.text} </b> </h2>
+       
+    <ol type="A" class>
+        <li>  <label class="container">
+    <input type="checkbox">
+    <span class="checkmark">${question.option_a}</span></label> 
+        </li>  <hr> 
+        <li> <label class="container">
+    <input type="checkbox">
+    <span class="checkmark">${question.option_b}</span></label> 
+        </li>  <hr> 
+        <li>  <label class="container"><input type="checkbox">
+    <span class="checkmark">${question.option_c}</span></label> 
+        </li>  <hr>
+    </ol>  `;
     });
 
     const ul = document.querySelector(".card-test ul");
