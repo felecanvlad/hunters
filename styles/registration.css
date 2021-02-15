@@ -1,68 +1,85 @@
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: white;
-  }
-
-.container {
-    padding: 16px;
-    background-color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #4e4b2c;
 }
-.all-inputs{
-    width: 100%;
-    padding: 15px;
-    margin: 5px 0 22px 0;
-    display: inline-block;
-    border: none;
-    background: #f1f1f1;
-  }
+
+/* .container {
+  padding: 16px;
+  background-color: #4e4b2c;
+} */
+.all-inputs {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  box-sizing: border-box;
+  background: #f1f1f1;
+  border-radius: 15px;
+  box-shadow: 0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%),
+    0 1px 5px 0 rgb(0 0 0 / 12%);
+}
 
 .all-inputs:focus {
-    background-color: #ddd;
-    outline: none;
-    box-sizing: border-box;
+  background-color: #ddd;
+  outline: none;
+  box-sizing: border-box;
 }
-
-hr {
-    border: 1px solid #f1f1f1;
-    margin-bottom: 25px;
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+img.avatar {
+  width: 300px;
+}
+.container {
+  max-width: 500px;
+  margin: auto;
 }
 
 .register-button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 16px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    opacity: 0.9;
-    border-radius: 10px;
+  background-color: #716f56;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+  border-radius: 15px;
+  outline: none;
 }
 
 .register-button:hover {
-    opacity: 1;
+  opacity: 1;
 }
 
 a {
-    color: dodgerblue;
+  color: #fff;
 }
 
-h1, p {
-    text-align: center;
+h2 {
+  text-align: center;
+  color: #fff;
 }
-  
+
 .sign-in-when-no-account {
-    background-color: #f1f1f1;
-    text-align: center;
+  background-color: #4e4b2c;
+  text-align: center;
 }
 
 #error-message {
-    color: red;
-    animation-name: custom-animation;
-    animation-duration: 4s;
+  color: red;
+  animation-name: custom-animation;
+  animation-duration: 4s;
 }
 
 @keyframes custom-animation {
-    from {color: red;}
-    to {background-color: yellow;}
+  from {
+    color: red;
   }
+  to {
+    background-color: yellow;
+  }
+}
