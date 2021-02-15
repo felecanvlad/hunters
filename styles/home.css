@@ -133,3 +133,7 @@ ol {
   margin-inline-end: 0px;
   padding-inline-start: 40px;
 }
+
+.card input {
+  background-color: red;
+}
