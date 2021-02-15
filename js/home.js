@@ -54,19 +54,29 @@ function renderQuestions(questions) {
         return ` 
             <h5> ${id++}. <b> ${question.text} : </b> </h5>
        
-    <ol type="A" class>
-        <li>  <label class="container">
-    <input type="checkbox">
-    <span class="checkmark"> ${question.option_a}</span></label> 
-        </li>  <hr> 
-        <li> <label class="container">
-    <input type="checkbox">
-    <span class="checkmark"> ${question.option_b}</span></label> 
-        </li>  <hr> 
-        <li>  <label class="container"><input type="checkbox">
-    <span class="checkmark"> ${question.option_c}</span></label> 
-        </li>  <hr>
-    </ol>`;
+    <ul>
+        <li>  
+            <label class="container">
+            <input type="checkbox">
+                <span class="checkmark"> ${question.option_a}</span>
+            </label> 
+        </li>
+        <hr> 
+
+        <li> 
+            <label class="container">
+            <input type="checkbox">
+                <span class="checkmark"> ${question.option_b}</span></label> 
+        </li>
+        <hr> 
+
+        <li>  
+            <label class="container">
+            <input type="checkbox">
+                <span class="checkmark"> ${question.option_c}</span></label> 
+        </li> 
+        <hr>
+    </ul>`;
     });
 
     const ul = document.querySelector(".card-test ul");
