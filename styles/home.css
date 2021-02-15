@@ -54,10 +54,7 @@ body > section {
   flex-direction: row;
   justify-content: left;
 }
-footer {
-  min-height: 20px;
-  background-color: #4e4b2c;
-}
+
 #logo {
   margin: 0;
 }
@@ -88,6 +85,7 @@ section h2 {
   background: #4e4b2c;
   background-repeat: no-repeat;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15), 0 2px 3px rgba(0, 0, 0, 0.2);
+  opacity: 85%;
 }
 
 #left-menu-bar {
