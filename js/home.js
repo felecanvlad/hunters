@@ -49,9 +49,10 @@ function generateRandomTest(number) {
 }
 
 function renderQuestions(questions) {
+    let id = 1;
     const questionsLi = questions.map(function (question) {
         return ` 
-            <h5>  <b> ${question.text} : </b> </h5>
+            <h5> ${id++}. <b> ${question.text} : </b> </h5>
        
     <ol type="A" class>
         <li>  <label class="container">
