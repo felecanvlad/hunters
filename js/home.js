@@ -83,10 +83,33 @@ function renderQuestions(questions) {
     ul.innerHTML = questionsLi.join("");
 }
 
+function startTimer(duration) {
+    var timer = duration, minutes, seconds;
+    setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        document.querySelector('#count-down').textContent = "Remaining time: " + minutes + ":" + seconds;
+
+        if (--timer < 0) {
+            timer = duration;
+        }
+    
+        if (minutes + ":" + seconds === "00:00") {
+            alert("timpul a expirat");
+        }
+    }, 1000);
+
+}
+
 initializeLeftMenu();
 showCard(currentPage);
 
 const generateTextHref = document.getElementById("start-test");
 generateTextHref.addEventListener("click", () => {
     generateRandomTest(4);
+    startTimer(60 * 60);
 });

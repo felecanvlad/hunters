@@ -135,3 +135,7 @@ ol {
 .card input {
   background-color: red;
 }
+
+#count-down {
+ color: red;
+}
