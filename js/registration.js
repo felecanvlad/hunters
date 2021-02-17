@@ -5,6 +5,8 @@ const firstPasswordInput = document.getElementById("first-password");
 const secondPasswordInput = document.getElementById("second-password");
 const birthdayPicker = document.getElementById("birthday");
 const message = document.getElementById("error-message");
+const togglePassword1 = document.getElementById("toggle-password1");
+const togglePassword2 = document.getElementById("toggle-password2");
 
 function clearAllFields() {
     emailInput.value = "";
@@ -56,5 +58,27 @@ registerButton.addEventListener("click", () => {
         }
     } else {
         message.innerText = "Please check the entered data";
+    }
+});
+
+
+togglePassword1.addEventListener("click", () => {
+    if (firstPasswordInput.type === "text") {
+        firstPasswordInput.type = "password";
+        togglePassword1.src = "/resources/eye-show.webp";
+    } else {
+        firstPasswordInput.type = "text";
+        togglePassword1.src = "/resources/eye-hide.webp";
+    }
+});
+
+
+togglePassword2.addEventListener("click", () => {
+    if (secondPasswordInput.type === "text") {
+        secondPasswordInput.type = "password";
+        togglePassword2.src = "/resources/eye-show.webp";
+    } else {
+        secondPasswordInput.type = "text";
+        togglePassword2.src = "/resources/eye-hide.webp";
     }
 });

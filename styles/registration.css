@@ -25,6 +25,21 @@ body {
   outline: none;
   box-sizing: border-box;
 }
+
+#toggle-password1 {
+  width: 35px;
+  right: 10px;
+  top: 403px;
+  position: absolute;
+}
+
+#toggle-password2 {
+  width: 35px;
+  right: 10px;
+  top: 492px;
+  position: absolute;
+}
+
 .imgcontainer {
   text-align: center;
   margin: 24px 0 12px 0;
@@ -35,6 +50,7 @@ img.avatar {
 .container {
   max-width: 500px;
   margin: auto;
+  position: relative;
 }
 
 .register-button {

@@ -25,6 +25,14 @@ input:focus {
   box-sizing: border-box;
 }
 
+#toggle-password {
+  width: 35px;
+  right: 10px;
+  top: 119px;
+  position: absolute;
+}
+
+
 h2 {
   text-align: center;
   color: #fff;
@@ -67,6 +75,7 @@ img.avatar {
 .form-container {
   max-width: 500px;
   margin: auto;
+  position: relative;
 }
 
 .container {

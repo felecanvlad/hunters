@@ -5,6 +5,7 @@ const loginButton = document.getElementById("login-button");
 const emailInput = document.getElementById("email-input");
 const passwordInput = document.getElementById("password-input");
 const errorMessage = document.getElementById("error-message");
+const togglePassword = document.getElementById("toggle-password");
 
 function clearInputFields() {
     emailInput.value = "";
@@ -55,3 +56,13 @@ document.addEventListener('keyup', function (event) {
         loginButton.click();
     }
 });
+
+togglePassword.addEventListener("click", () => {
+    if (passwordInput.type === "text") {
+        passwordInput.type = "password";
+        togglePassword.src = "/resources/eye-show.webp";
+    } else {
+        passwordInput.type = "text";
+        togglePassword.src = "/resources/eye-hide.webp";
+    }
+})
