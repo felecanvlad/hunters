@@ -52,7 +52,7 @@ function renderQuestions(questions) {
     let id = 1;
     const questionsLi = questions.map(function (question) {
         return ` 
-            <h5> ${id++}. <b> ${question.text} : </b> </h5>
+        <h5 name = "${question.id}"> ${id++}. <b> ${question.text} : </b> </h5>
        
     <ul>
         <li>  
@@ -115,5 +115,5 @@ showCard(currentPage);
 const generateTextHref = document.getElementById("start-test");
 generateTextHref.addEventListener("click", () => {
     generateRandomTest(4);
-    startTimer(4);
+    startTimer(400);
 });
