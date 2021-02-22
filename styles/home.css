@@ -60,13 +60,14 @@ body > section {
 
 #logo {
   margin: 0;
+  padding: 0;
 }
 section h2 {
   text-align: center;
 }
 .card {
   background-color: #a7a598;
-  width: 300px;
+  width: 1122px;
   /* height: 300px; */
   /* margin: 16px 0; */
   padding: 24px;
@@ -75,7 +76,7 @@ section h2 {
   border-radius: 2px;
   display: flex;
   flex-direction: column;
-  opacity: 75%;
+  opacity: 79%;
 }
 
 #content {
