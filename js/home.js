@@ -84,8 +84,8 @@ function renderQuestions(questions) {
 }
 
 function startTimer(duration) {
-    var timer = duration, minutes, seconds;
-    setInterval(function () {
+    let timer = duration, minutes, seconds;
+    const interval = setInterval(function () {
         minutes = parseInt(timer / 60, 10);
         seconds = parseInt(timer % 60, 10);
 
@@ -97,12 +97,16 @@ function startTimer(duration) {
         if (--timer < 0) {
             timer = duration;
         }
-    
+
         if (minutes + ":" + seconds === "00:00") {
-            alert("timpul a expirat");
+            clearInterval(interval);
+            const ul = document.querySelector(".card-test ul");
+            ul.innerHTML = "";
+
+            const generateTitle = document.querySelector("#generate-title");
+            generateTitle.innerHTML = "See you next time!";
         }
     }, 1000);
-
 }
 
 initializeLeftMenu();
@@ -111,5 +115,5 @@ showCard(currentPage);
 const generateTextHref = document.getElementById("start-test");
 generateTextHref.addEventListener("click", () => {
     generateRandomTest(4);
-    startTimer(60 * 60);
+    startTimer(4);
 });
