@@ -56,24 +56,26 @@ function renderQuestions(questions) {
        
     <ul>
         <li>  
-            <label class="container">
-            <input type="checkbox">
-                <span class="checkmark"> ${question.option_a}</span>
+            <label>
+            <input class="answer" type="radio" name="${question.id}" value="0" >
+                 ${question.option_a}
             </label> 
         </li>
         <hr> 
 
         <li> 
-            <label class="container">
-            <input type="checkbox">
-                <span class="checkmark"> ${question.option_b}</span></label> 
+            <label>
+            <input class="answer" type="radio" name="${question.id}" value="1" >
+                ${question.option_b}
+            </label> 
         </li>
         <hr> 
 
         <li>  
-            <label class="container">
-            <input type="checkbox">
-                <span class="checkmark"> ${question.option_c}</span></label> 
+            <label>
+            <input class="answer" type="radio" name="${question.id}" value="2">
+                ${question.option_c}
+            </label> 
         </li> 
         <hr>
     </ul>`;
