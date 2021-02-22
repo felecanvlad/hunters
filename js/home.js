@@ -79,7 +79,7 @@ function renderQuestions(questions) {
     </ul>`;
     });
 
-    const ul = document.querySelector(".card-test ul");
+    const ul = document.querySelector(".card ul");
     ul.innerHTML = questionsLi.join("");
 }
 
@@ -100,7 +100,7 @@ function startTimer(duration) {
 
         if (minutes + ":" + seconds === "00:00") {
             clearInterval(interval);
-            const ul = document.querySelector(".card-test ul");
+            const ul = document.querySelector(".card ul");
             ul.innerHTML = "";
 
             const generateTitle = document.querySelector("#generate-title");
