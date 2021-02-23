@@ -141,3 +141,7 @@ ol {
 #count-down {
   color: red;
 }
+
+#error-message {
+  color: red;
+}

@@ -52,7 +52,7 @@ function renderQuestions(questions) {
     let id = 1;
     const questionsLi = questions.map(function (question) {
         return ` 
-        <h5 name = "${question.id}"> ${id++}. <b> ${question.text} : </b> </h5>
+        <h5> ${id++}. <b> ${question.text} : </b> </h5>
        
     <ul>
         <li>  
@@ -119,3 +119,47 @@ generateTextHref.addEventListener("click", () => {
     generateRandomTest(4);
     startTimer(400);
 });
+
+const submitButton = document.getElementById("submit-button");
+const errorMessage = document.getElementById("error-message");
+submitButton.addEventListener("click", () => {
+    const allAnswers = [...document.querySelectorAll(".answer")];
+    if (!isRadioChecked()) {
+        errorMessage.innerText = "Please choose at least one answer for each question";
+    } else {
+        errorMessage.innerText = "";
+        const checkedResults = allAnswers.filter(answer => {
+            return answer.checked
+        });
+
+        const dataToSent = [];
+        checkedResults.forEach(result => {
+            const questionIdValue = result.name;
+            const selectedAnswer = result.value;
+            const res = { "id": questionIdValue, "option": selectedAnswer };
+            return dataToSent.push(res);
+        });
+
+        fetch("http://localhost:3000/hunters/validate", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(dataToSent)
+        })
+            .then(res => res.json())
+            .then(r => {
+                console.warn(r.success);
+                if (r.success) {
+                    alert("SUCCESS");
+                } else {
+                    alert("STOP! FAILED!");
+                }
+            });
+
+    }
+});
+
+function isRadioChecked() {
+    return [...document.querySelectorAll(".answer")].some(c => c.checked);
+}
