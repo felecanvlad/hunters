@@ -34,7 +34,7 @@ Learn hunting law in order to pass the exam
 
 ## TEAM
 
-- Rares Mihai - [GitHub](https://github.com/romanrares)
+- Rares Mihai Roman - [GitHub](https://github.com/romanrares)
 - Andrei Tirla - [GitHub](https://github.com/AndreiTirla)
 - Iacob Mihai - [GitHub](https://github.com/IacobMihai)
 - Felecan Vlad - [GitHub](https://github.com/felecanvlad)
