@@ -188,3 +188,7 @@ ol {
 #test h4 {
   margin-block-end: 0;
 }
+
+#current-user-email {
+  color: red;
+}
