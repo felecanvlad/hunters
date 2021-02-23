@@ -119,7 +119,8 @@ function startTimer(duration) {
 function displayCurrentUserEmail() {
     const currentUserEmail = document.getElementById("current-user-email");
     const localStorageValue = window.localStorage.getItem("email");
-    currentUserEmail.innerText = currentUserEmail.innerText + localStorageValue;
+    localStorageValue == undefined ? currentUserEmail.innerText = "" :
+        currentUserEmail.innerText = currentUserEmail.innerText + localStorageValue;
 }
 
 initializeLeftMenu();

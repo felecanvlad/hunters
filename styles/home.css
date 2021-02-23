@@ -71,10 +71,34 @@ section h2 {
   border-radius: 2px;
   display: flex;
   flex-direction: column;
-  opacity: 79%;
+  opacity: 82%;
+  font-family: "Montserrat", sans-serif;
+  color: black;
 }
 .card ul {
   list-style-type: none;
+}
+.card h2 {
+  overflow: visible;
+  margin: 0 -5px 15px;
+  padding: 5px 95px 5px 10px;
+  line-height: 30px;
+  font-size: 25px;
+  font-weight: normal;
+  color: #ffd;
+  background-color: rgba(116, 116, 114, 0.7);
+  position: relative;
+}
+.card h2 em {
+  position: absolute;
+  bottom: -3px;
+  right: 1px;
+  display: block;
+  width: 79px;
+  height: 57px;
+  overflow: hidden;
+  background-image: url(../resources/bear.png);
+  background-repeat: no-repeat;
 }
 
 #content {
@@ -146,6 +170,21 @@ ol {
   color: red;
 }
 
-#current-user-email {
-  color: red;
+#submit-button {
+  background-color: #716f56;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  width: 25%;
+  border-radius: 15px;
+  outline: none;
+}
+#test h2 {
+  display: inline-flex;
+}
+#test h4 {
+  margin-block-end: 0;
 }
