@@ -87,6 +87,9 @@ function renderQuestions(questions) {
 
 function startTimer(duration) {
     let timer = duration, minutes, seconds;
+    if (window.timerStarted) {
+        return;
+    }
     const interval = setInterval(function () {
         minutes = parseInt(timer / 60, 10);
         seconds = parseInt(timer % 60, 10);
@@ -102,6 +105,7 @@ function startTimer(duration) {
 
         if (minutes + ":" + seconds === "00:00") {
             clearInterval(interval);
+            window.timerStarted = undefined;
             const ul = document.querySelector(".card ul");
             ul.innerHTML = "";
 
@@ -109,14 +113,22 @@ function startTimer(duration) {
             generateTitle.innerHTML = "See you next time!";
         }
     }, 1000);
+    window.timerStarted = interval;
+}
+
+function displayCurrentUserEmail() {
+    const currentUserEmail = document.getElementById("current-user-email");
+    const localStorageValue = window.localStorage.getItem("email");
+    currentUserEmail.innerText = currentUserEmail.innerText + localStorageValue;
 }
 
 initializeLeftMenu();
 showCard(currentPage);
+displayCurrentUserEmail();
 
 const generateTextHref = document.getElementById("start-test");
 generateTextHref.addEventListener("click", () => {
-    generateRandomTest(4);
+    generateRandomTest(10);
     startTimer(400);
 });
 

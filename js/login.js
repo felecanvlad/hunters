@@ -32,6 +32,7 @@ function checkCredentials() {
         .then((resp) => {
             console.log("resp", resp);
             if (statusCodeResponse === 200) {
+                window.localStorage.setItem("email", emailInput.value);
                 window.location = "/home.html";
             } else {
                 errorMessage.innerText = "Incorrect email address or password";

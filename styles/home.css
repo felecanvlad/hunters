@@ -145,3 +145,7 @@ ol {
 #error-message {
   color: red;
 }
+
+#current-user-email {
+  color: red;
+}
