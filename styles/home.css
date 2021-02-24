@@ -25,7 +25,6 @@ header,
 body > section {
   flex: 0.1;
 }
-
 #main {
   margin: 2px;
   padding: 4px;
@@ -190,5 +189,18 @@ ol {
 }
 
 #current-user-email {
-  color: red;
+  margin-block-end: 0%;
+}
+#profile-button {
+  background-color: #716f56;
+  color: white;
+  padding: 5px 5px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  width: auto;
+  border-radius: 15px;
+  opacity: 75%;
+  outline: none;
 }
