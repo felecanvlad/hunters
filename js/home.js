@@ -57,7 +57,7 @@ function renderQuestions(questions) {
     <ul>
         <li>  
             <label>
-            <input class="answer" type="radio" name="${question.id}" value="0" >
+            <input id="${question.id}-0" class="answer" type="radio" name="${question.id}" value="0" >
                  ${question.option_a}
             </label> 
         </li>
@@ -65,7 +65,7 @@ function renderQuestions(questions) {
 
         <li> 
             <label>
-            <input class="answer" type="radio" name="${question.id}" value="1" >
+            <input id="${question.id}-1" class="answer" type="radio" name="${question.id}" value="1" >
                 ${question.option_b}
             </label> 
         </li>
@@ -73,7 +73,7 @@ function renderQuestions(questions) {
 
         <li>  
             <label>
-            <input class="answer" type="radio" name="${question.id}" value="2">
+            <input id="${question.id}-2" class="answer" type="radio" name="${question.id}" value="2">
                 ${question.option_c}
             </label> 
         </li> 
@@ -145,6 +145,7 @@ submitButton.addEventListener("click", () => {
             return answer.checked
         });
 
+        let statusCodeResponse = "";
         const dataToSent = [];
         checkedResults.forEach(result => {
             const questionIdValue = result.name;
@@ -160,16 +161,29 @@ submitButton.addEventListener("click", () => {
             },
             body: JSON.stringify(dataToSent)
         })
-            .then(res => res.json())
-            .then(r => {
-                console.warn(r.success);
-                if (r.success) {
-                    alert("SUCCESS");
-                } else {
-                    alert("STOP! FAILED!");
-                }
-            });
+            .then(function (res) {
+                statusCodeResponse = res.status;
+                return res.json()
+            })
+            .then((resp) => {
+                if (statusCodeResponse === 200) {
+                    resp.filter(question => question.isCorrect === false).forEach(each => {
+                        const wrongAnswer = document.getElementById(`${each.id}-${each.option}`);
+                        const wrongParrent = wrongAnswer.parentNode;
+                        wrongParrent.style.border = "1px solid red";
+                        wrongParrent.style["background-color"] = "red";
 
+                        const correctAnswer = document.getElementById(`${each.id}-${each.correct}`);
+                        const correctParent = correctAnswer.parentNode;
+                        correctParent.style.border = "1px solid green";
+                        correctParent.style["background-color"] = "green";
+                    });
+                } else {
+                    errorMessage.innerText = "Response code is not 200";
+                }
+            }).catch(function (error) {
+                errorMessage.innerText = "Something went wrong. Please contact administrator: " + error;
+            });
     }
 });
 
