@@ -190,3 +190,6 @@ submitButton.addEventListener("click", () => {
 function isRadioChecked() {
     return [...document.querySelectorAll(".answer")].some(c => c.checked);
 }
+function btnProfile () {
+    alert("Facem sa fie bine !");
+}
