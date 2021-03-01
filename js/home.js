@@ -191,6 +191,5 @@ function isRadioChecked() {
     return [...document.querySelectorAll(".answer")].some(c => c.checked);
 }
 function btnProfile () {
-    hidePreviousPage();
-    document.getElementById("profile").style.display = "";
+    alert("Facem sa fie bine !")
 }
