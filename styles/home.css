@@ -70,9 +70,11 @@ section h2 {
   border-radius: 2px;
   display: flex;
   flex-direction: column;
-  opacity: 82%;
+  opacity: 90%;
   font-family: "Montserrat", sans-serif;
   color: black;
+  overflow: auto;
+  max-height: 85vh;
 }
 .card ul {
   list-style-type: none;
