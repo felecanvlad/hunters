@@ -11,15 +11,17 @@ Come and learn hunting law in order to pass.
 
 ## Features
 
-- [ ] Welcome screen (enter or select name) + remember me
-- [ ] Remember selected options for each name
-- [x] Show 10 random tests => print test results
-- [ ] Choose domain
-- [x] Choose level
-- [x] Add questions with free text answers
-- [ ] After finish Test show info notes
-- [ ] Add time limit
-- [ ] Store answers in local storage in case of reload
+- [x] Registration Page that sends the user information to the database.
+- [x] Login Page that sends the user and password to be validated by the API.
+- [x] Home Page with four submenu's (Home, Profile, Start Test, History).
+- [x] Submenu "Home" presents an overview about the website and the hunting exam rules.
+- [x] Submenu "Profile" contains user information.
+- [x] Submenu "Start Test" that generates 30 random hunting questions and a Submit button.
+- [x] Submenu "Start Test" also provides the right answers to the questions after you hit the Submit button.
+- [x] Add time limit to the Submenu "Start Test".
+- [x] If the time limit is reached hide all the questions and block user to Submit the Test.
+- [ ] After finish Test show info notes.
+- [ ] History page saves users previous tests and score.
 
 # hunters
 
@@ -31,6 +33,8 @@ Learn hunting law in order to pass the exam
 - [x] create css file
 - [x] create js file
 - [x] add .gitignore file
+- [ ] after finish Test show info notes.
+- [ ] history page that saves users previous tests and score.
 
 ## TEAM
 
@@ -38,3 +42,28 @@ Learn hunting law in order to pass the exam
 - Andrei Tirla - [GitHub](https://github.com/AndreiTirla)
 - Iacob Mihai - [GitHub](https://github.com/IacobMihai)
 - Felecan Vlad - [GitHub](https://github.com/felecanvlad)
+
+## Dev Notes
+
+### Start & Build
+
+```sh
+npm i
+npm run start
+```
+
+Production build:
+
+```sh
+npm run build
+```
+
+## Start App
+
+- open [node-api-hunter] (https://github.com/romanrares/node-api-hunter) folder in visual studio
+- open [hunter-ui](https://github.com/romanrares/hunter) folder in Visual Studio Code or any other text editors.
+- open Xampp - start Apache , MySQL
+- open terminal and run: `npm run devstart`
+- Shift+Ctrl+P - Browser Sync: Server mode in browser
+- Insert `*` and press Enter.
+- localhost:80 - phpMyAdmin (database)
