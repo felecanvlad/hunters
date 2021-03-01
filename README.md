@@ -1,4 +1,8 @@
-# JS/HTML/CSS Hunting Quiz App
+# Hunters
+
+Learn hunting law in order to pass the exam
+
+## JS/HTML/CSS Hunting Quiz App
 
 Over 1000 Web Hunting Questions that help you prepare for the Hunter exam.
 Come and learn hunting law in order to pass.
@@ -22,10 +26,6 @@ Come and learn hunting law in order to pass.
 - [x] If the time limit is reached hide all the questions and block user to Submit the Test.
 - [ ] After finish Test show info notes.
 - [ ] History page saves users previous tests and score.
-
-# hunters
-
-Learn hunting law in order to pass the exam
 
 ## TODO
 
