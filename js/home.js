@@ -193,6 +193,10 @@ const initEvents = function () {
                             correctParent.style.border = "1px solid green";
                             correctParent.style["background-color"] = "green";
                         });
+
+                        const gradeField = document.getElementById("grade");
+                        gradeField.innerText = "You failled the exam with a percentage of: "
+                            + resp.grade + "%";
                     } else {
                         errorMessage.innerText = "Response code is not 200";
                     }
