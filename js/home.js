@@ -30,7 +30,7 @@ function initializeLeftMenu() {
     });
 }
 
-function generateRandomTest(number) {
+function generateRandomTest(number, callback) {
     let statusCodeResponse = "";
     fetch(`http://localhost:3000/hunters/random?value=${number}`, {
         method: "GET"
@@ -42,6 +42,7 @@ function generateRandomTest(number) {
         .then(resp => {
             if (statusCodeResponse === 200) {
                 renderQuestions(resp);
+                callback();
             } else {
                 alert("ERROR");
             }
@@ -54,7 +55,7 @@ function renderQuestions(questions) {
         return ` 
         <h5> ${id++}. <b> ${question.text} : </b> </h5>
        
-    <ul>
+    <ul class="eachSetOfAnswers">
         <li>  
             <label>
             <input id="${question.id}-0" class="answer" type="radio" name="${question.id}" value="0" >
@@ -127,69 +128,79 @@ initializeLeftMenu();
 showCard(currentPage);
 displayCurrentUserEmail();
 
-const generateTextHref = document.getElementById("start-test");
-generateTextHref.addEventListener("click", () => {
-    generateRandomTest(10);
-    startTimer(400);
-});
-
-const submitButton = document.getElementById("submit-button");
-const errorMessage = document.getElementById("error-message");
-submitButton.addEventListener("click", () => {
-    const allAnswers = [...document.querySelectorAll(".answer")];
-    if (!isRadioChecked()) {
-        errorMessage.innerText = "Please choose at least one answer for each question";
-    } else {
-        errorMessage.innerText = "";
-        const checkedResults = allAnswers.filter(answer => {
-            return answer.checked
-        });
-
-        let statusCodeResponse = "";
-        const dataToSent = [];
-        checkedResults.forEach(result => {
-            const questionIdValue = result.name;
-            const selectedAnswer = result.value;
-            const res = { "id": questionIdValue, "option": selectedAnswer };
-            return dataToSent.push(res);
-        });
-
-        fetch("http://localhost:3000/hunters/validate", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(dataToSent)
-        })
-            .then(function (res) {
-                statusCodeResponse = res.status;
-                return res.json()
+const initEvents = function () {
+    const generateTextHref = document.getElementById("start-test");
+    generateTextHref.addEventListener("click", () => {
+        generateRandomTest(10, function () {
+            const uls = document.querySelectorAll(".eachSetOfAnswers");
+            uls.forEach(ul => {
+                ul.addEventListener('click', function (e) {
+                    if (e.target.nodeName === "INPUT") {
+                        this.setAttribute('checked', true);
+                    }
+                });
             })
-            .then((resp) => {
-                if (statusCodeResponse === 200) {
-                    resp.filter(question => question.isCorrect === false).forEach(each => {
-                        const wrongAnswer = document.getElementById(`${each.id}-${each.option}`);
-                        const wrongParrent = wrongAnswer.parentNode;
-                        wrongParrent.style.border = "1px solid red";
-                        wrongParrent.style["background-color"] = "red";
+        });
+        startTimer(400);
+    });
 
-                        const correctAnswer = document.getElementById(`${each.id}-${each.correct}`);
-                        const correctParent = correctAnswer.parentNode;
-                        correctParent.style.border = "1px solid green";
-                        correctParent.style["background-color"] = "green";
-                    });
-                } else {
-                    errorMessage.innerText = "Response code is not 200";
-                }
-            }).catch(function (error) {
-                errorMessage.innerText = "Something went wrong. Please contact administrator: " + error;
-            });
+    function isRadioChecked() {
+        return [...document.querySelectorAll(".eachSetOfAnswers")].every(c => c.getAttribute('checked'));;
     }
-});
 
-function isRadioChecked() {
-    return [...document.querySelectorAll(".answer")].some(c => c.checked);
+    const submitButton = document.getElementById("submit-button");
+    const errorMessage = document.getElementById("error-message");
+    submitButton.addEventListener("click", () => {
+        const allAnswers = [...document.querySelectorAll(".answer")];
+        if (!isRadioChecked()) {
+            errorMessage.innerText = "Please choose at least one answer for each question";
+        } else {
+            errorMessage.innerText = "";
+            const checkedResults = allAnswers.filter(answer => {
+                return answer.checked
+            });
+
+            let statusCodeResponse = "";
+            const dataToSent = [];
+            checkedResults.forEach(result => {
+                const questionIdValue = result.name;
+                const selectedAnswer = result.value;
+                const res = { "id": questionIdValue, "option": selectedAnswer };
+                return dataToSent.push(res);
+            });
+
+            fetch("http://localhost:3000/hunters/validate", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(dataToSent)
+            })
+                .then(function (res) {
+                    statusCodeResponse = res.status;
+                    return res.json()
+                })
+                .then((resp) => {
+                    if (statusCodeResponse === 200) {
+                        resp.answers.filter(question => question.isCorrect === false).forEach(each => {
+                            const wrongAnswer = document.getElementById(`${each.id}-${each.option}`);
+                            const wrongParrent = wrongAnswer.parentNode;
+                            wrongParrent.style.border = "1px solid red";
+                            wrongParrent.style["background-color"] = "red";
+
+                            const correctAnswer = document.getElementById(`${each.id}-${each.correct}`);
+                            const correctParent = correctAnswer.parentNode;
+                            correctParent.style.border = "1px solid green";
+                            correctParent.style["background-color"] = "green";
+                        });
+                    } else {
+                        errorMessage.innerText = "Response code is not 200";
+                    }
+                }).catch(function (error) {
+                    errorMessage.innerText = "Something went wrong. Please contact administrator: " + error;
+                });
+        }
+    });
 }
-function btnProfile () {
-    alert("Facem sa fie bine !")
-}
+
+initEvents();
