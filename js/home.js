@@ -197,6 +197,13 @@ const initEvents = function () {
                             correctParent.style["background-color"] = "green";
                         });
 
+                        resp.answers.filter(question => question.isCorrect === true).forEach(each => {
+                            const correctAnswer = document.getElementById(`${each.id}-${each.correct}`);
+                            const correctParent = correctAnswer.parentNode;
+                            correctParent.style.border = "1px solid green";
+                            correctParent.style["background-color"] = "green";
+                        });
+
                         const gradeField = document.getElementById("grade");
                         if (resp.incorrectAnwsers > resp.totalNumberOfQuestions / 2 + 1) {
                             gradeField.innerText = "You failled the exam. Correct responses: " + resp.correctAnwsers
