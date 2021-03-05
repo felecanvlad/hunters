@@ -2,7 +2,7 @@
 
 Learn hunting law in order to pass the exam
 
-## JS/HTML/CSS Hunting Quiz App
+## Hunting Quizz App Based on HTML/CSS/JS
 
 Over 1000 Web Hunting Questions that help you prepare for the Hunter exam.
 Come and learn hunting law in order to pass.
