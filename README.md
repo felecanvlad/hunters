@@ -58,12 +58,12 @@ Production build:
 npm run build
 ```
 
-## Start App
+## Start Up
 
+- open Xampp - start Apache , MySQL
+- localhost:80 - phpMyAdmin (database)
 - open [node-api-hunter] (https://github.com/romanrares/node-api-hunter) folder in visual studio
 - open [hunter-ui](https://github.com/romanrares/hunter) folder in Visual Studio Code or any other text editors.
-- open Xampp - start Apache , MySQL
 - open terminal and run: `npm run devstart`
 - Shift+Ctrl+P - Browser Sync: Server mode in browser
-- Insert `*` and press Enter.
-- localhost:80 - phpMyAdmin (database)
+- Insert `*` and press Enter
