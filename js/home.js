@@ -179,6 +179,12 @@ const initEvents = function () {
                 })
                 .then((resp) => {
                     if (statusCodeResponse === 200) {
+                        const allRadioOptions = document.querySelectorAll("li label input");
+                        allRadioOptions.forEach(radio => {
+                            radio.disabled = true;
+                        });
+                        submitButton.style.display = "none";
+
                         resp.answers.filter(question => question.isCorrect === false).forEach(each => {
                             const wrongAnswer = document.getElementById(`${each.id}-${each.option}`);
                             const wrongParrent = wrongAnswer.parentNode;
