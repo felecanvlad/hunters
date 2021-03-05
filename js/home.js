@@ -1,3 +1,4 @@
+
 let currentPage = "home";
 const ACTIVE_PROPERTY = "active";
 
@@ -124,10 +125,6 @@ function displayCurrentUserEmail() {
         currentUserEmail.innerText = currentUserEmail.innerText + localStorageValue;
 }
 
-initializeLeftMenu();
-showCard(currentPage);
-displayCurrentUserEmail();
-
 const initEvents = function () {
     const generateTextHref = document.getElementById("start-test");
     generateTextHref.addEventListener("click", () => {
@@ -195,8 +192,19 @@ const initEvents = function () {
                         });
 
                         const gradeField = document.getElementById("grade");
-                        gradeField.innerText = "You failled the exam with a percentage of: "
-                            + resp.grade + "%";
+                        if (resp.incorrectAnwsers > resp.totalNumberOfQuestions / 2 + 1) {
+                            gradeField.innerText = "You failled the exam. Correct responses: " + resp.correctAnwsers
+                                + " (from a total of " + resp.totalNumberOfQuestions + ")";
+                            gradeField.style.color = "red";
+                        } else if (resp.incorrectAnwsers == 0) {
+                            gradeField.innerText = "You passed the exam without any mistake!";
+                            gradeField.style.color = "green";
+                        } else {
+                            gradeField.innerText = "You passed the exam. This time you were lucky but maybe not next time! Correct responses: " + resp.correctAnwsers
+                                + " (from a total of " + resp.totalNumberOfQuestions + ")";
+                            gradeField.style.color = "green";
+                        }
+
                     } else {
                         errorMessage.innerText = "Response code is not 200";
                     }
@@ -207,4 +215,7 @@ const initEvents = function () {
     });
 }
 
+initializeLeftMenu();
+showCard(currentPage);
+displayCurrentUserEmail();
 initEvents();
