@@ -1,3 +1,6 @@
+* {
+  border-radius: 10px;
+}
 html {
   height: 100%;
 }
@@ -67,7 +70,7 @@ section h2 {
   padding: 24px;
   margin: 0 25px 15px 25px;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15), 0 2px 3px rgba(0, 0, 0, 0.2);
-  border-radius: 2px;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   opacity: 90%;
@@ -75,9 +78,20 @@ section h2 {
   color: black;
   overflow: auto;
   max-height: 85vh;
+  animation-name: animation;
+  animation-duration: 1.7s;
+}
+
+@keyframes animation{
+  from {opacity: 0; background-color: #363208;}
+  to {opacity: 90%; background-color: #a7a598;}
 }
 .card ul {
   list-style-type: none;
+}
+.card a {
+  color: inherit;
+  font-weight: bold;
 }
 .card h2 {
   overflow: visible;
@@ -87,7 +101,6 @@ section h2 {
   font-size: 25px;
   font-weight: normal;
   color: #ffd;
-  background-color: rgba(116, 116, 114, 0.7);
   position: relative;
 }
 .card h2 em {
@@ -113,6 +126,7 @@ section h2 {
   background-repeat: no-repeat;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15), 0 2px 3px rgba(0, 0, 0, 0.2);
   opacity: 85%;
+  border-radius: 10px;
 }
 
 #left-menu-bar {
@@ -137,6 +151,8 @@ section h2 {
   color: #fff;
   display: block;
   text-align: center;
+  transition: width 2s, height 4s;
+  border-radius: 10px;
 }
 
 #left-menu-bar a:hover {
