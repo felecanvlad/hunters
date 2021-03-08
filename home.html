@@ -1,122 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/home.css">
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/home.css" />
     <title>Hunters</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light.">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="#"><img id="logo" src="../resources/logo.png" alt="hunterLogo"
-                            height="80px"></a>
-                            <button id="profile-button" onclick="btnProfile()">
-                                <h6 id="current-user-email"> Welcome <br> </h6>
-                            </button>
-                </div>
-            </nav>
-        </div>
+      <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light.">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#"
+              ><img
+                id="logo"
+                src="resources/logo.png"
+                alt="hunterLogo"
+                height="80px"
+            /></a>
+            <button id="profile-button" onclick="btnProfile()">
+              <h6 id="current-user-email">Welcome <br /></h6>
+            </button>
+          </div>
+        </nav>
+      </div>
     </header>
     <section id="content">
-        <div id="menu-bar">
-            <ul id="left-menu-bar">
-                <li>
-                    <a href="#" data-page="home">
-                        Home
-                    </a>
-                </li>
-                <li>
-                    <a href="#" data-page="profile">
-                        Profile
-                    </a>
-                </li>
-                <li>
-                    <a href="#" data-page="test" id="start-test">
-                        Start Test
-                    </a>
-                </li>
-                <li>
-                    <a href="#" data-page="history">
-                        History
-                    </a>
-                </li>
-            </ul>
+      <div id="menu-bar">
+        <ul id="left-menu-bar">
+          <li>
+            <a href="#" data-page="home"> Home </a>
+          </li>
+          <li>
+            <a href="#" data-page="profile"> Profile </a>
+          </li>
+          <li>
+            <a href="#" data-page="test" id="start-test"> Start Test </a>
+          </li>
+          <li>
+            <a href="#" data-page="history"> History </a>
+          </li>
+        </ul>
+      </div>
+      <div id="home" style="display: none">
+        <div class="card">
+          <h2>
+            Bine ați venit!
+            <em></em>
+          </h2>
+          <br />
+          <p>
+            Test grilă pentru examenul de vânător valabil din 2016 până în
+            prezent.
+          </p>
+          <br />
+          <p>
+            Va puteti testa cunostiintele cu teste standard, de 30 intrebari, ca
+            la examenul teoretic, sau testul cuprinzand toate intrebarile. In
+            cazul testului de 30 de intrebari, acestea sunt alese aleator din
+            setul de 1000 de intrebari, avand si aceeasi ordine a raspunsurilor
+            ca in documentul oficial (.doc). Pentru a trece testul, trebuie sa
+            aveti un procentaj mai mare decat 66%, deci mai mult de doua treimi
+            din raspunsuri sa fie corecte.
+          </p>
+          <br />
+          <p>
+            Pentru testul de 30 intrebari acest lucru este echivalent cu minim
+            20 raspunsuri corecte. Dupa testare, la afisarea rezultatului, veti
+            avea si toate intrebarile afisate din nou, cu raspunsurile corecte
+            marcate (si eventualele raspunsuri gresite marcate de asemenea),
+            pentru a sti exact ce si unde ati gresit.
+          </p>
+          <br />
+          <p>
+            Pentru a descarca toate intrebarile oficiale apasa
+            <a
+              href="http://mmediu.ro/app/webroot/uploads/files/%C3%AEntreb%C4%83ri-examen-v%C3%A2n%C4%83tor-valabile-din-25-02-2016.doc"
+              target="_blank"
+              rel="nofollow"
+              >aici</a
+            >
+          </p>
+          <p>Succes la examen!</p>
+          <br />
         </div>
-        <div id="home" style="display: none;">
-            <div class="card">
-                <h2>Bine ați venit!
-                    <em></em>
-                </h2>
-                <br>
-                <p>Test grilă pentru examenul de vânător valabil din 2016 până în prezent.</p>
-                <br>
-                <p>Va puteti testa cunostiintele cu teste standard, de 30 intrebari, ca la examenul teoretic,
-                    sau testul cuprinzand toate intrebarile. In cazul testului de 30 de intrebari,
-                    acestea sunt alese aleator din setul de 1000 de intrebari, avand si aceeasi ordine a raspunsurilor
-                    ca in documentul oficial (.doc). Pentru a trece testul,
-                    trebuie sa aveti un procentaj mai mare decat 66%, deci mai mult de doua treimi din raspunsuri sa fie
-                    corecte.</p>
-                <br>
-                <p>Pentru testul de 30 intrebari acest lucru este echivalent cu minim 20 raspunsuri corecte. Dupa
-                    testare,
-                    la afisarea rezultatului, veti avea si toate intrebarile afisate din nou,
-                    cu raspunsurile corecte marcate (si eventualele raspunsuri gresite marcate de asemenea),
-                    pentru a sti exact ce si unde ati gresit.</p>
-                <br>
-                <p>
-                    Pentru a descarca toate intrebarile oficiale apasa
-                    <a href="http://mmediu.ro/app/webroot/uploads/files/%C3%AEntreb%C4%83ri-examen-v%C3%A2n%C4%83tor-valabile-din-25-02-2016.doc"
-                        target="_blank" rel="nofollow">aici</a>
-                </p>
-                <p>Succes la examen!</p>
-                <br>
-            </div>
+      </div>
+      <div id="profile" style="display: none">
+        <div class="card">
+          <h2>
+            Check profile
+            <em></em>
+          </h2>
         </div>
-        <div id="profile" style="display: none;">
-            <div class="card">
-                <h2>Check profile
-                    <em></em>
-                </h2>
+      </div>
 
-            </div>
+      <div id="test" style="display: none">
+        <div class="card">
+          <h2 id="generate-title">
+            <span>
+              <h4 id="count-down"></h4>
+            </span>
+            Generate test
+            <em></em>
+          </h2>
+          <ul></ul>
+          <label id="error-message"></label>
+          <input type="submit" id="submit-button" value="Trimite rezultat" />
+          <h1 id="grade"></h1>
         </div>
+      </div>
 
-        <div id="test" style="display: none;">
-            <div class="card">
-                <h2 id="generate-title">
-                    <span>
-                        <h4 id="count-down"></h4>
-                    </span>
-                    Generate test
-                    <em></em>
-                </h2>
-                <ul></ul>
-                <label id="error-message"></label>
-                <input type="submit" id="submit-button" value="Trimite rezultat">
-                <h1 id="grade"></h1>
-            </div>
+      <div id="history" style="display: none">
+        <div class="card">
+          <h2>
+            Show history
+            <em></em>
+          </h2>
         </div>
-
-        <div id="history" style="display: none;">
-            <div class="card">
-                <h2>Show history
-                    <em></em>
-                </h2>
-            </div>
-        </div>
+      </div>
     </section>
-    <footer>
-    </footer>
-    <script src="../js/home.js"></script>
-</body>
-
+    <footer></footer>
+    <script src="js/home.js"></script>
+  </body>
 </html>
