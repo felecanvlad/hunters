@@ -138,7 +138,7 @@ const initEvents = function () {
                 });
             })
         });
-        startTimer(400);
+        startTimer(1800);
     });
 
     function isRadioChecked() {
