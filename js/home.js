@@ -128,7 +128,7 @@ function displayCurrentUserEmail() {
 const initEvents = function () {
     const generateTextHref = document.getElementById("start-test");
     generateTextHref.addEventListener("click", () => {
-        generateRandomTest(10, function () {
+        generateRandomTest(30, function () {
             const uls = document.querySelectorAll(".eachSetOfAnswers");
             uls.forEach(ul => {
                 ul.addEventListener('click', function (e) {
@@ -217,6 +217,10 @@ const initEvents = function () {
                                 + " (from a total of " + resp.totalNumberOfQuestions + ")";
                             gradeField.style.color = "green";
                         }
+                        const timer = document.getElementById("count-down");
+                        const generateTestText = document.getElementById("generate-title")
+                        timer.style.display= "none";
+                        generateTestText.style.display= "none";
 
                     } else {
                         errorMessage.innerText = "Response code is not 200";
